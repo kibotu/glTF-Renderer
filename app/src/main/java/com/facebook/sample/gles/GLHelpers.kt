@@ -12,22 +12,22 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
+package com.facebook.sample.gles
 
-package com.facebook.sample.gles;
+import android.opengl.GLES20
+import android.util.Log
+import java.lang.RuntimeException
 
-import android.opengl.GLES20;
-import android.util.Log;
+object GLHelpers {
+    private val TAG: String = GLHelpers::class.java.getSimpleName()
 
-public class GLHelpers {
-    private static final String TAG = GLHelpers.class.getSimpleName();
-
-    public static void checkGlError(String op) {
-        int error = GLES20.glGetError();
+    fun checkGlError(op: String?) {
+        val error = GLES20.glGetError()
         if (error == GLES20.GL_NO_ERROR) {
-            return;
+            return
         }
-        String msg = op + ": glError 0x" + Integer.toHexString(error);
-        Log.e(TAG, msg);
-        throw new RuntimeException(msg);
+        val msg = op + ": glError 0x" + Integer.toHexString(error)
+        Log.e(TAG, msg)
+        throw RuntimeException(msg)
     }
 }

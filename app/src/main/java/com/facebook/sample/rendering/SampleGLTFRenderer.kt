@@ -31,7 +31,7 @@ import java.util.ArrayList
 /**
  * This is a trivial glTF renderer that issues GLES draw commands to render the primitive meshes
  * parsed by *SampleGLTFReader*. Note that this renderer is a sample that is only intended to
- * render helloworld.json. This is not intended to be a generic glTF renderer; it is intended to
+ * render helloworld.glb. This is not intended to be a generic glTF renderer; it is intended to
  * be an introduction to 3D scene rendering with OpenGL ES APIs and the glTF format.
  */
 class SampleGLTFRenderer {

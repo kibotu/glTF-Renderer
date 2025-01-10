@@ -12,8 +12,8 @@ object Repository {
     var model: GLTFScene? = null
 
     suspend fun loadModel() = withContext(Dispatchers.IO) {
-//        val string = "helloworld.json".stringFromAssets() ?: return@withContext
-        val string = "simplified_model.json".stringFromAssets() ?: return@withContext
+//        val string = "helloworld.glb".stringFromAssets() ?: return@withContext
+        val string = "simplified_model.glb".stringFromAssets() ?: return@withContext
 //        val string = asset.stringFromAssets() ?: return@withContext
         try {
             model = Json { ignoreUnknownKeys = true }.decodeFromString(string)
